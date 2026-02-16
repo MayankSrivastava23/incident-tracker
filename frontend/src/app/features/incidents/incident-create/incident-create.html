@@ -1,0 +1,99 @@
+<div class="page">
+  <mat-card class="card">
+    <div class="header">
+      <div class="headerLeft">
+        <button mat-icon-button class="backBtn" routerLink="/incidents">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+
+      <div class="headerCenter">
+        <div class="title">Create Incident</div>
+      </div>
+
+      <div class="headerRight"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    @if (loading) {
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+      <div class="grid">
+        <div class="field">
+          <div class="label">Title <span class="req">*</span></div>
+          <mat-form-field appearance="outline" class="full">
+            <input matInput formControlName="title" placeholder="Issue Title..." />
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <div class="label">Service <span class="req">*</span></div>
+          <mat-form-field appearance="outline" class="full">
+            <mat-select formControlName="service" placeholder="Select service">
+              @for (s of services; track s) {
+                <mat-option [value]="s">{{ s }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="field">
+          <div class="label">Severity <span class="req">*</span></div>
+          <mat-form-field appearance="outline" class="full">
+            <mat-select formControlName="severity" placeholder="Select severity">
+              @for (s of severities; track s) {
+                <mat-option [value]="s">{{ s }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <div class="label">Assigned To</div>
+          <mat-form-field appearance="outline" class="full">
+            <input matInput formControlName="owner" placeholder="dev@team" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="field">
+        <div class="label">Status <span class="req">*</span></div>
+        <mat-form-field appearance="outline" class="full">
+          <mat-select formControlName="status" placeholder="Select status">
+            @for (s of statuses; track s) {
+              <mat-option [value]="s">{{ s }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <div class="label">Description</div>
+        <mat-form-field appearance="outline" class="full">
+          <textarea
+            matInput
+            class="desc"
+            rows="3"
+            formControlName="summary"
+            placeholder="Describe the incident..."
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="actions">
+        <button mat-stroked-button type="button" routerLink="/incidents" [disabled]="loading">
+          Cancel
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="loading || form.invalid"
+        >
+          Create incident
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

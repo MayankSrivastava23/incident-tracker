@@ -1,0 +1,161 @@
+.wrap {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 14px;
+  background: #fafafa;
+}
+
+.sheet {
+  width: min(1200px, 100%);
+  border-radius: 18px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.pageHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 18px 18px;
+  min-height: 78px;
+  background: #fff;
+}
+
+.backBtn {
+  width: 40px;
+  height: 40px;
+}
+
+.pageTitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+}
+
+.body {
+  padding: 12px 18px 18px;
+  background: #fff;
+}
+
+.incidentHeading {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  padding: 10px 0 12px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 18px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.k {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2b2b2b;
+  margin-bottom: 6px;
+}
+
+.readValue {
+  height: 56px;          
+  padding: 0 16px;            
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #1f1f1f;
+}
+
+.miniField {
+  margin: 0;
+}
+
+.miniField ::ng-deep .mat-mdc-text-field-wrapper {
+  height: 56px;
+}
+
+.miniField ::ng-deep .mat-mdc-form-field-flex {
+  height: 56px;
+  align-items: center;
+}
+
+.miniField ::ng-deep .mat-mdc-form-field-infix {
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.full {
+  width: 100%;
+}
+
+.miniField ::ng-deep .mat-mdc-form-field-infix {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.summaryBox {
+  border: 1px solid #e4e4e4;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 12px;
+  min-height: 90px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding-top: 22px;
+}
+
+.actions button {
+  min-width: 180px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+  .span2 {
+    grid-column: span 1;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
