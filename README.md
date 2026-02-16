@@ -219,7 +219,7 @@ The frontend UI was iterated quickly to match the assignment screenshots and foc
 
 *End-to-end full-stack implementation covering API design, database modeling, pagination logic, and frontend state management.
 *Scalable backend architecture with clear separation of concerns (controller, service, repository) and defensive validation at multiple layers.
-*Efficient server-side pagination, filtering, and sorting, designed to
+*Efficient server-side pagination, filtering, and sorting.
 
 ---
 
